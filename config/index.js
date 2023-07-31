@@ -11,7 +11,12 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [],
+  plugins: [
+    ['@tarojs/plugin-html', {
+      // 过滤 weui 组件库的前缀：weui
+      pxtransformBlackList: [/page|h5|weui/]
+    }]
+  ],
   defineConstants: {
   },
   copy: {
@@ -54,6 +59,7 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: ['taro-ui'],
     postcss: {
       autoprefixer: {
         enable: true,

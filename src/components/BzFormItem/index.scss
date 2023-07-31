@@ -1,6 +1,9 @@
 .bz-form-item_conainer {
   position: relative;
-  padding: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 1px;
   color: #333;
   &:after {
     border-bottom: 1PX dashed #ccc;
@@ -56,7 +59,8 @@
       padding-right: 10px;
       vertical-align: middle;
     }
-    .bz-form-item_input > input {
+    .bz-form-item_input > * {
+      height: 60px;
       width: 100%;
     }
 

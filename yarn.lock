@@ -75,6 +75,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/generator@npm:^7.20.0":
+  version: 7.22.9
+  resolution: "@babel/generator@npm:7.22.9"
+  dependencies:
+    "@babel/types": ^7.22.5
+    "@jridgewell/gen-mapping": ^0.3.2
+    "@jridgewell/trace-mapping": ^0.3.17
+    jsesc: ^2.5.1
+  checksum: 7c9d2c58b8d5ac5e047421a6ab03ec2ff5d9a5ff2c2212130a0055e063ac349e0b19d435537d6886c999771aef394832e4f54cd9fc810100a7f23d982f6af06b
+  languageName: node
+  linkType: hard
+
 "@babel/generator@npm:^7.22.7":
   version: 7.22.7
   resolution: "@babel/generator@npm:7.22.7"
@@ -362,7 +374,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.14.5, @babel/parser@npm:^7.20.15, @babel/parser@npm:^7.21.3, @babel/parser@npm:^7.22.5, @babel/parser@npm:^7.22.7":
+"@babel/parser@npm:^7.14.5, @babel/parser@npm:^7.20.0, @babel/parser@npm:^7.20.15, @babel/parser@npm:^7.21.3, @babel/parser@npm:^7.22.5, @babel/parser@npm:^7.22.7":
   version: 7.22.7
   resolution: "@babel/parser@npm:7.22.7"
   bin:
@@ -1656,7 +1668,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/traverse@npm:^7.12.5, @babel/traverse@npm:^7.14.5, @babel/traverse@npm:^7.22.5, @babel/traverse@npm:^7.22.6, @babel/traverse@npm:^7.22.8":
+"@babel/traverse@npm:^7.12.5, @babel/traverse@npm:^7.14.5, @babel/traverse@npm:^7.20.0, @babel/traverse@npm:^7.22.5, @babel/traverse@npm:^7.22.6, @babel/traverse@npm:^7.22.8":
   version: 7.22.8
   resolution: "@babel/traverse@npm:7.22.8"
   dependencies:
@@ -1674,7 +1686,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.22.5, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
+"@babel/types@npm:^7.20.0, @babel/types@npm:^7.22.5, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
   version: 7.22.5
   resolution: "@babel/types@npm:7.22.5"
   dependencies:
@@ -2499,6 +2511,21 @@ __metadata:
     react-refresh:
       optional: true
   checksum: 6c32ded89ea77ac786fb30c424416bf153cfe07d1de5197a0adf5690f93e35ae4a775965bb18f0d9c79a703771fa1847b30fdbe3097e5ce722dc66fedc244a11
+  languageName: node
+  linkType: hard
+
+"@tarojs/plugin-html@npm:3.6.8":
+  version: 3.6.8
+  resolution: "@tarojs/plugin-html@npm:3.6.8"
+  dependencies:
+    "@babel/generator": ^7.20.0
+    "@babel/parser": ^7.20.0
+    "@babel/traverse": ^7.20.0
+    "@babel/types": ^7.20.0
+    "@tarojs/runtime": 3.6.8
+    "@tarojs/service": 3.6.8
+    "@tarojs/shared": 3.6.8
+  checksum: 5c08f42175a12ed4167e91b077e77ba577cf8c9c6b083801d453a7dd1d43d71ec34687543b7c37820ed90008e309945f20cb696f4b7723c3251e7ce6c9be23e4
   languageName: node
   linkType: hard
 
@@ -6077,7 +6104,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.7.7":
+"dayjs@npm:^1.11.9, dayjs@npm:^1.7.7":
   version: 1.11.9
   resolution: "dayjs@npm:1.11.9"
   checksum: a4844d83dc87f921348bb9b1b93af851c51e6f71fa259604809cfe1b49d1230e6b0212dab44d1cb01994c096ad3a77ea1cf18fa55154da6efcc9d3610526ac38
@@ -15928,9 +15955,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"taro-ui@npm:^3.1.0-beta.2":
-  version: 3.1.0-beta.6
-  resolution: "taro-ui@npm:3.1.0-beta.6"
+"taro-ui@npm:3.1.0-beta.7":
+  version: 3.1.0-beta.7
+  resolution: "taro-ui@npm:3.1.0-beta.7"
   dependencies:
     classnames: ^2.2.6
     dayjs: ^1.7.7
@@ -15944,7 +15971,7 @@ __metadata:
     react: ">=16.13.0"
     react-dom: ">=16.13.0"
     react-native: ">=0.62.0"
-  checksum: beeeb481c9a13b958ea1678ae99794492dd02c204615cc910c01dc80a78612a89fe905ca3460da5e29aabb92d021fb49b4b213306da20cf86187f26720183e2d
+  checksum: 8bb6f1936fcf076bb0448ea2892cb615297555dbea00eb22279c9d383bbe5e6f7c975dba8355cc288ccd69af8597d1a44b7d7f380a716643deb0875b09704f17
   languageName: node
   linkType: hard
 
@@ -16909,6 +16936,7 @@ __metadata:
     "@tarojs/components": 3.6.8
     "@tarojs/helper": 3.6.8
     "@tarojs/plugin-framework-react": 3.6.8
+    "@tarojs/plugin-html": 3.6.8
     "@tarojs/plugin-platform-alipay": 3.6.8
     "@tarojs/plugin-platform-h5": 3.6.8
     "@tarojs/plugin-platform-jd": 3.6.8
@@ -16929,6 +16957,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.20.0
     babel-preset-taro: 3.6.8
     classnames: ^2.3.2
+    dayjs: ^1.11.9
     eslint: ^8.12.0
     eslint-config-taro: 3.6.8
     eslint-plugin-import: ^2.12.0
@@ -16942,7 +16971,7 @@ __metadata:
     react-hook-form: ^7.45.1
     react-refresh: ^0.11.0
     stylelint: 9.3.0
-    taro-ui: ^3.1.0-beta.2
+    taro-ui: 3.1.0-beta.7
     ts-node: ^10.9.1
     typescript: ^4.1.0
     webpack: ^5.78.0

@@ -1,3 +1,15 @@
-page {
-  background: #f4f7fc;
+@import "taro-ui/dist/style/index.scss";
+
+//page {
+//  background: #f4f7fc;
+//}
+
+.page, body, .taro_page  {
+  background-color: var(--weui-BG-0) !important;
+}
+
+.h5-button, taro-button-core {
+  &:after {
+    border: none;
+  }
 }

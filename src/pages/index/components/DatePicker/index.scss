@@ -1,0 +1,34 @@
+.BzPickerContainer {
+  .test-item {
+    height: 50px;
+  }
+  .at-float-layout .layout-body {
+    padding: 0;
+  }
+
+  .BzPickerToolbar {
+    display: flex;
+    height: var(--picker-toolbar-height, 88px);
+    justify-content: space-between;
+    line-height: var(--picker-toolbar-height, 88px);
+    .BzPickerCanel {
+      color: var(--picker-cancel-action-color, #969799);
+    }
+    .BzPickerTitle {
+      font-size: var(--picker-option-font-size, 32px);
+      font-weight: var(--font-weight-bold, 500);
+      max-width: 50%;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .BzPickerConfirm {
+      color: var(--picker-confirm-action-color, #576b95);
+    }
+    .BzPickerCanel, .BzPickerConfirm {
+      font-size: var(--picker-action-font-size, 28px);
+      padding: 0 var(--picker-action-padding, 32px);
+    }
+  }
+}

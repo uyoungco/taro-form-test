@@ -1,11 +1,12 @@
 import React, {
-  type FC,
+  type FC, ReactNode,
   cloneElement,
   isValidElement,
   useCallback,
   useEffect,
   useMemo,
-  memo, useRef
+  memo,
+  useRef
 } from 'react'
 import { Label, View } from "@tarojs/components";
 import type {
@@ -21,7 +22,7 @@ type BzFormItemProps = {
   layout?: 'vertical' | 'horizontal'
   name: string;
   lable?: string;
-  children?: React.ReactNode ;
+  children?: ReactNode;
   rules?: UseControllerProps['rules'];
   trigger?: string;
   validateTrigger?: string;
@@ -29,7 +30,7 @@ type BzFormItemProps = {
   defaultValue?: string;
   valueKey?: string;
   required?: RegisterOptions['required'];
-  onClick?: (e, ref) => void;
+  onClick?: (e, ref: React.MutableRefObject<any>) => void;
 }
 
 const BzFormItem: FC<BzFormItemProps> = (props) => {
@@ -43,10 +44,11 @@ const BzFormItem: FC<BzFormItemProps> = (props) => {
     trigger = 'onChange',
     valueKey = 'value',
     defaultValue,
-    valueFormat
+    valueFormat,
+    onClick,
   } = props
 
-  const childrenRef = useRef()
+  const widgetRef = useRef<any>(null)
   const { control, unregister } = useFormContext()
   const controllerProps = useController({
     name,
@@ -67,9 +69,9 @@ const BzFormItem: FC<BzFormItemProps> = (props) => {
   const valueFormat_ = valueFormat || defaultValueFormat
 
 
-  const getControlled  =  (state: UseControllerReturn) => {
-    // ref
-    const {onChange, onBlur, value} = state.field
+  const getControlled = useCallback((state: UseControllerReturn) => {
+
+    const { onChange, onBlur, value } = state.field
 
     const handleChange = (e: any) => {
       const result = valueFormat_(e, name)
@@ -97,10 +99,10 @@ const BzFormItem: FC<BzFormItemProps> = (props) => {
       [trigger]: handleChange,
       [valueKey]: value,
       onBlur,
-      ref: childrenRef,
+      ref: widgetRef,
       name
     }
-  }
+  }, [name, trigger])
 
   const renderChildren = useMemo(() => {
       if (isValidElement(children)) {
@@ -108,28 +110,24 @@ const BzFormItem: FC<BzFormItemProps> = (props) => {
       }
       return children
     },
-    [children, getControlled],
+    [children, controllerProps, getControlled],
   )
 
 
   useEffect(() => {
     return () => {
+      // 组件销毁时注销name
       unregister(name)
     }
   }, [])
 
-  const message = controllerProps.fieldState.error?.message
-  console.log('controllerProps', controllerProps)
+  const message = useMemo(() => controllerProps.fieldState.error?.message, [controllerProps.fieldState.error?.message])
 
-  const handleClick = useCallback((e) => {
-    props?.onClick?.(e, childrenRef)
-  }, [props, childrenRef])
 
   return (
     <View
-      onClick={handleClick}
-      className="bz-form-item_conainer"
-      hoverClass={cx({
+      onClick={onClick && (e => onClick(e, widgetRef))}
+      className={cx('bz-form-item_conainer', {
         ['bz-form-item_conainer']: !!props?.onClick
       })}
     >
