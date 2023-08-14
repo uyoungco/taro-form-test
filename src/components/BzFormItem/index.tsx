@@ -8,7 +8,7 @@ import React, {
   memo,
   useRef
 } from 'react'
-import { Label, View } from "@tarojs/components";
+import { type ITouchEvent,  Label, View } from "@tarojs/components";
 import type {
   UseControllerProps,
   RegisterOptions
@@ -30,7 +30,7 @@ type BzFormItemProps = {
   defaultValue?: string;
   valueKey?: string;
   required?: RegisterOptions['required'];
-  onClick?: (e, ref: React.MutableRefObject<any>) => void;
+  onClick?: (e: ITouchEvent, ref?: React.MutableRefObject<any>) => void;
 }
 
 const BzFormItem: FC<BzFormItemProps> = (props) => {

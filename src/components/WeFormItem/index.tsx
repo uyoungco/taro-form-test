@@ -1,5 +1,5 @@
-import React, {
-  type FC,
+import {
+  type FC, ReactNode,
   cloneElement,
   isValidElement,
   useCallback,
@@ -17,12 +17,12 @@ import {UseControllerReturn} from "react-hook-form/dist/types/controller";
 import cx from 'classnames'
 import './index.scss'
 
-type BzFormItemProps = {
+export type BzFormItemProps = {
   layout?: 'vertical' | 'horizontal'
   name: string;
   lable?: string;
   desc?: string;
-  children?: React.ReactNode ;
+  children?: ReactNode | undefined;
   rules?: UseControllerProps['rules'];
   trigger?: string;
   validateTrigger?: string;
@@ -30,9 +30,9 @@ type BzFormItemProps = {
   defaultValue?: string;
   valueKey?: string;
   required?: RegisterOptions['required'];
-  onClick?: (e, ref) => void;
+  onClick?: (e: any, ref: any) => void;
   clear?: boolean;
-  ft?: React.ReactNode;
+  ft?: ReactNode | undefined;
 }
 
 const BzFormItem: FC<BzFormItemProps> = (props) => {
