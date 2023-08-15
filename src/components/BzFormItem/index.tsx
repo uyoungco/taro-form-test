@@ -14,7 +14,7 @@ import type {
   RegisterOptions
 } from "react-hook-form";
 import { useController, useFormContext } from "react-hook-form";
-import {UseControllerReturn} from "react-hook-form/dist/types/controller";
+import { UseControllerReturn } from "react-hook-form/dist/types/controller";
 import cx from 'classnames'
 import './index.scss'
 
@@ -128,7 +128,7 @@ const BzFormItem: FC<BzFormItemProps> = (props) => {
     <View
       onClick={onClick && (e => onClick(e, widgetRef))}
       className={cx('bz-form-item_conainer', {
-        ['bz-form-item_conainer']: !!props?.onClick
+        ['bz-form-item_active']: !!props?.onClick,
       })}
     >
       <View className={`bz-form-item_layout ${layout}`}>
@@ -143,14 +143,15 @@ const BzFormItem: FC<BzFormItemProps> = (props) => {
         <View className="bz-form-item_input">
           { renderChildren }
         </View>
-        {
-          message ? (
-            <View className="bz-form-item_message">
-              { message }
-            </View>
-          ) : null
-        }
+        <View className="bz-form-item_right"></View>
       </View>
+      {
+        message ? (
+          <View className="bz-form-item_message">
+            { message }
+          </View>
+        ) : null
+      }
     </View>
   )
 }

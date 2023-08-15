@@ -38,6 +38,7 @@ const Index = () => {
           onSubmit={onSubmit}
         >
           <BzFormItem
+            layout="vertical"
             required
             name="name"
             lable="客户名称"
@@ -48,6 +49,7 @@ const Index = () => {
           </BzFormItem>
 
           <BzFormItem
+            required
             name="test"
             lable="客户类型"
             trigger="onInput"
@@ -58,6 +60,7 @@ const Index = () => {
 
 
           <BzFormItem
+            layout="vertical"
             name="test2.test3"
             lable="测试层级"
             trigger="onInput"
@@ -80,7 +83,7 @@ const Index = () => {
             trigger="onChange"
             valueFormat={e => e}
             onClick={(_e, ref) => {
-              ref.current?.open()
+              ref?.current?.open()
             }}
           >
             <DatePicker title="测试弹窗" />

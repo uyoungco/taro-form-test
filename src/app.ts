@@ -1,6 +1,6 @@
 import { Component, PropsWithChildren } from 'react'
 import './app.scss'
-import './style/weui.less'
+// import './style/weui.less'
 
 class App extends Component<PropsWithChildren> {
 

@@ -14,7 +14,7 @@ const config = {
   plugins: [
     ['@tarojs/plugin-html', {
       // 过滤 weui 组件库的前缀：weui
-      pxtransformBlackList: [/page|h5|weui/]
+      // pxtransformBlackList: [/page|h5|weui/]
     }]
   ],
   defineConstants: {
